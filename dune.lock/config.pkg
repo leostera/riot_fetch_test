@@ -1,0 +1,17 @@
+(version 0.0.2)
+
+(build
+ (progn
+  (when
+   %{pkg-self:dev}
+   (run dune subst))
+  (run dune build -p %{pkg-self:name} -j %{jobs} @install)))
+
+(depends ocaml ocaml ppxlib sedlex spices dune)
+
+(source
+ (fetch
+  (url
+   https://github.com/ocaml-sys/config.ml/releases/download/0.0.2/config-0.0.2.tbz)
+  (checksum
+   sha256=0bbbb6d19efef2071663152808f94c6a469530be19a2f28174cfc54245147f04)))

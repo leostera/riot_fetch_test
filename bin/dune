@@ -1,0 +1,4 @@
+(executable
+ (public_name riot_fetch_test)
+ (name main)
+ (libraries riot_fetch_test riot blink))

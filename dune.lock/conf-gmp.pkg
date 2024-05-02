@@ -1,0 +1,7 @@
+(version 4)
+
+(build
+ (run
+  sh
+  -exc
+  "cc -c $CFLAGS -I/opt/homebrew/include -I/opt/local/include -I/usr/local/include test.c"))

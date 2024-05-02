@@ -1,0 +1,19 @@
+(version 1.13)
+
+(install
+ (run %{make} install))
+
+(build
+ (progn
+  (run
+   sh
+   -exc
+   "LDFLAGS=\"$LDFLAGS -L/opt/homebrew/lib\" CFLAGS=\"$CFLAGS -I/opt/homebrew/include\" ./configure")
+  (run %{make})))
+
+(depends ocaml ocamlfind conf-gmp)
+
+(source
+ (fetch
+  (url https://github.com/ocaml/Zarith/archive/release-1.13.tar.gz)
+  (checksum md5=b3529c5de89ab8c026943f73f6195ad9)))

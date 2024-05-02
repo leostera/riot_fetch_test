@@ -1,0 +1,15 @@
+(version 0.7.1)
+
+(build
+ (progn
+  (when
+   %{pkg-self:dev}
+   (run dune subst))
+  (run dune build -p %{pkg-self:name} -j %{jobs})))
+
+(depends ocaml dune bigstringaf angstrom faraday result)
+
+(source
+ (fetch
+  (url https://github.com/inhabitedtype/httpaf/archive/0.7.1.tar.gz)
+  (checksum md5=8c8b199d0553f02fb361cf52c57c0412)))

@@ -1,0 +1,12 @@
+(version 1.1.0)
+
+(build
+ (run ocaml pkg/pkg.ml build --dev-pkg %{pkg-self:dev}))
+
+(depends ocaml ocamlfind ocamlbuild topkg)
+
+(source
+ (fetch
+  (url https://erratique.ch/software/ptime/releases/ptime-1.1.0.tbz)
+  (checksum
+   sha512=309b8383f61b58840e58a82802ec8fbc61b7cc95a4590d38ad427e484cbaaf66f03fa8e6484b5b6855468a87e745aed103bf6f1041ec05062230a9fa5fb86cc6)))

@@ -1,0 +1,17 @@
+(version 5.5.0)
+
+(build
+ (progn
+  (when
+   %{pkg-self:dev}
+   (run dune subst))
+  (run dune build -p %{pkg-self:name} -j %{jobs})))
+
+(depends ocaml dune macaddr domain-name)
+
+(source
+ (fetch
+  (url
+   https://github.com/mirage/ocaml-ipaddr/releases/download/v5.5.0/ipaddr-5.5.0.tbz)
+  (checksum
+   sha256=62890b316e035792ad29af1ad971456d10defd525b74b53db1b67fa42375c178)))

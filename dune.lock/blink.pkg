@@ -1,0 +1,24 @@
+(version dev)
+
+(dune)
+
+(depends
+ angstrom
+ castore
+ digestif
+ bitstring
+ httpaf
+ ppx_bitstring
+ faraday
+ http
+ mirage-crypto-rng
+ ocaml
+ riot
+ x509
+ dune)
+
+(source
+ (fetch
+  (url git+https://github.com/suri-framework/blink)))
+
+(dev)
